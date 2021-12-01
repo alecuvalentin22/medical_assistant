@@ -1,5 +1,5 @@
 let speechRecognition;
-let textarea = document.getElementById('disease-description');
+let textarea = document.getElementById('symptoms-description');
 document.addEventListener('DOMContentLoaded', app);
 
 
@@ -19,11 +19,11 @@ function initSpeechRecognition() {
     speechRecognition.continuous = false;
     speechRecognition.interimResults = false;
     speechRecognition.onstart = function() {
-        console.log("We are listening. Try speaking into the microphone.");
+        console.log("Recording started. Please use your microphone to tell us your symptoms");
     }
     speechRecognition.onspeechend = () => {
         speechRecognition.stop();
-        console.log("Ended")
+        console.log("Recording stopped.")
     }
     speechRecognition.onresult = function (event) {
         
