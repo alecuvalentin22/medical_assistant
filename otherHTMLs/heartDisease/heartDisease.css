@@ -13,3 +13,7 @@
     flex-direction: row;
     margin-top: 30px;
 }
+
+.option {
+    padding: 10%;
+}
