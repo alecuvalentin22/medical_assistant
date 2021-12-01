@@ -1,7 +1,12 @@
-.canvas{
-    display: flex;
-    align-items: center;
+#canvas{
+    text-align-last: center;
     z-index: 10000;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:auto;
 }
 
 .heartDiseaseCanvas {
