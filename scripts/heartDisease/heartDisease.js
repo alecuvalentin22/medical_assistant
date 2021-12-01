@@ -4,13 +4,13 @@ window.addEventListener('load', () => {
     const dataHeartDisease = [211.1, 207.8, 300, 141.8, 113.3, 157.3];
     const yLabels = ["0", "50", "100", "150", "200", "250", "300"];
     const xLabels = ["All races", "White", "African", "American", "Asian", "Hispanic"];
-    const maxPixelsHeight = 750;
+    const maxPixelsHeight = 350;
 
     const colorCodes = ["#F08080", "#FF0000", "#8B0000"]
-    const standardWidth = 50;
+    const standardWidth = 45;
 
-    canvas.height = 775;
-    canvas.width = 1000;
+    canvas.height = 375;
+    canvas.width = 630;
 
     initChart(context, yLabels);
 
@@ -27,10 +27,10 @@ window.addEventListener('load', () => {
         let currentIndex = width * index;
 
         context.beginPath();
-        context.moveTo(currentIndex, 740);
-        context.lineTo(currentIndex, 450 - height);
-        context.lineTo(currentIndex + standardWidth, 450 - height);
-        context.lineTo(currentIndex + standardWidth, 740);
+        context.moveTo(currentIndex, 340);
+        context.lineTo(currentIndex, 375 - height);
+        context.lineTo(currentIndex + standardWidth, 375 - height);
+        context.lineTo(currentIndex + standardWidth, 340);
         
         if (height < 150) {
             context.fillStyle = colorCodes[0];
@@ -46,7 +46,7 @@ window.addEventListener('load', () => {
 
         context.font = "20px Georgia";
         context.textAlign = "left";
-        context.fillText(xLabels[index - 1], currentIndex, 770);
+        context.fillText(xLabels[index - 1], currentIndex, 370);
         
         context.fill();
         context.closePath();
@@ -56,15 +56,19 @@ window.addEventListener('load', () => {
 function initChart(context, yLabels) {
     context.beginPath();
     context.moveTo(30, 0);
-    context.lineTo(30, 750);
-    context.lineTo(1000, 750);
+    context.lineTo(30, 350);
+    context.lineTo(630, 350);
     context.stroke();
 
     context.font = "15px Georgia";
 
     for (let i = 0; i < yLabels.length; i++) {
-        context.fillText(      yLabels[i], 0, 740 - i * 113 );
+        context.fillText(yLabels[i], 0, 340 - i * 42 );
     }
 
     context.closePath();
+}
+
+function drawOutline() {
+
 }

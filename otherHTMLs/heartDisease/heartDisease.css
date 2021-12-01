@@ -1,12 +1,5 @@
 #canvas{
-    text-align-last: center;
     z-index: 10000;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin:auto;
 }
 
 .heartDiseaseCanvas {
@@ -21,4 +14,18 @@
 
 .options {
     padding-top: 7%;
+}
+
+#canvas-content {
+    float: right;
+    margin-top: 10%;
+    margin-right: 10%;
+
+    transition-timing-function: ease-out; 
+    transition: 1s; 
+    transform: translateY(-53.5%);
+}
+
+#canvas-content:hover {
+    opacity: 1;
 }
