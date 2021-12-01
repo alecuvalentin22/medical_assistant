@@ -6,9 +6,7 @@ let ulYears;
 canvas.width = 1200;
 canvas.height = 800;
 
-let dataCancer = {"1995":845693,"1996":687019,"1997":713273,"1998":765911,"1999":674895,"2000":747097,"2001":969357,"2002":884857,"2003":926371,"2004":974134,"2005":825637,"2006":739180,"2007":687759,"2008":648259,"2009":622712,"2010":582366,"2011":610639,"2012":606959,"2013":552268,"2014":540632,"2015":523385,"2016":531803,"2017":503587,"2018":468975,"2019":483119}
-let dataSida = {"1995":36673,"1996":37188,"1997":35400,"1998":33052,"1999":35334,"2000":40689,"2001":50214,"2002":49596,"2003":45758,"2004":49120,"2005":47330,"2006":50672,"2007":52047,"2008":52661,"2009":59193,"2010":67345,"2011":68292,"2012":75028,"2013":83657,"2014":91357,"2015":89354,"2016":98856,"2017":97178,"2018":95330,"2019":106230}
-let dataCold = {"1995":7438698,"1996":8060179,"1997":7159757,"1998":6912769,"1999":6584301,"2000":6749240,"2001":7651627,"2002":7699428,"2003":7333245,"2004":7642809,"2005":7816248,"2006":7277538,"2007":6233709,"2008":6117987,"2009":7080652,"2010":6870819,"2011":6879799,"2012":6324157,"2013":6114508,"2014":5595562,"2015":5790105,"2016":5535843,"2017":5197421,"2018":5110659,"2019":4904339}
+let dataCancer = {"All Races":211.1,"White":207.8,"African American":271.3,"American Indian/Alaska Native":141.8,"Asian/Pacific Islander":113.3,"Hispanic":157.3}
 
 function drawLine(context, startPointX, startPointY, endPointX, endPointY, color) {
     context.save();
@@ -81,27 +79,7 @@ var CancerChart = new DeseaseBarchart({
     colors: ["#980B0B", "#F78D8D", "#4B0606", "#ED1D1D", "#FF4754", "#FF0A1B"]
 });
 
-var SidaChart = new DeseaseBarchart({
-    canvas: canvas,
-    padding: 120,
-    gridScale: 30000,
-    gridColor: '#130202',
-    data: dataSida,
-    colors: ["#980B0B", "#F78D8D", "#4B0606", "#ED1D1D", "#FF4754", "#FF0A1B"]
-});
-
-var ColdChart = new DeseaseBarchart({
-    canvas: canvas,
-    padding: 120,
-    gridScale: 600000,
-    gridColor: '#130202',
-    data: dataCold,
-    colors: ["#980B0B", "#F78D8D", "#4B0606", "#ED1D1D", "#FF4754", "#FF0A1B"]
-});
-
 let deseaseOptionCancer = document.querySelector('.option-cancer');
-let deseaseOptionSida = document.querySelector('.option-sida');
-let deseaseOptionCold = document.querySelector('.option-cold');
 
 deseaseOptionCancer.addEventListener('click',() => {
     context.clearRect(0, 0, canvas.width, canvas.height);
@@ -114,33 +92,6 @@ deseaseOptionCancer.addEventListener('click',() => {
     } else {
         drawLegend(dataCancer,dataValues,CancerChart);
     }
-})
-
-deseaseOptionSida.addEventListener('click', () => {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    SidaChart.draw();
-    barIndex = 0;
-        let dataValues = Object.values(dataSida);
-        if(ulYears) {
-            legend.removeChild(ulYears);
-            drawLegend(dataSida,dataValues,SidaChart);
-        } else {
-            drawLegend(dataSida,dataValues,SidaChart);
-        }
-       
-})
-
-deseaseOptionCold.addEventListener('click', () => {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    ColdChart.draw();
-    barIndex = 0;
-        let dataValues = Object.values(dataCold);
-        if(ulYears) {
-            legend.removeChild(ulYears);
-            drawLegend(dataCold,dataValues,ColdChart);
-        } else {
-            drawLegend(dataCold,dataValues,ColdChart);
-        } 
 })
 
 function drawLegend(dataObj,dataObjValues,chart) {
