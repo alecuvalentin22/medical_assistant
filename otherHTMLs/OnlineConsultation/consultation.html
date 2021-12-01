@@ -15,57 +15,117 @@
 </head>
 
 <body>
-    <!--NavBar-->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #edf2f4;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="/../index.html"><img src="../../resources/logo-medical.png" height="100" alt="" loading="lazy"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="../../index.html" aria-current="page" href="#">Home</a>
+  <!--NavBar-->
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #edf2f4;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/../index.html"><img src="../../resources/logo-medical.png" height="100" alt=""
+          loading="lazy"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="../../index.html" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./consultation.html">Online consultation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../COVID-19/covid.html">COVID-19</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Other services
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="./consultation.html">Online consultation</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../COVID-19/covid.html">COVID-19</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Other services
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="../AboutUs/about.html">About us</a>
-              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-            <ul class="navbar-nav ms-auto">
-              <button type="button" class="btn btn-danger btn-lg option option-emergency" style="border-radius: 10px;">
-                <a href="tel:112" class="emergency-number"><i class="fas fa-phone-alt"></i></a>  Emergency</button>
-            </ul>
-            </div>
-        </div>
-    </nav>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../AboutUs/about.html">About us</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          <button type="button" class="btn btn-danger btn-lg option option-emergency" style="border-radius: 10px;">
+            <a href="tel:112" class="emergency-number"><i class="fas fa-phone-alt"></i></a> Emergency</button>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <script src="js/jquery.js"></script>        
-    <script src="js/bootstrap.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-          $('.dropdown-toggle').dropdown();
-      });
- </script>
+  <div class="container">
+    <div class="title">Consultation form</div>
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details"> Full name</span>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Username</span>
+          <input type="text" placeholder="Enter your username" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" placeholder="Enter your email" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Phone number</span>
+          <input type="text" placeholder="Enter your phone number" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Password</span>
+          <input type="text" placeholder="Enter your password" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Confirm password</span>
+          <input type="text" placeholder="Confirm password" required>
+        </div>
+      </div>
+      <div class="gender-details">
+        <input type="radio" name="gender" id="dot-1">
+        <input type="radio" name="gender" id="dot-2">
+        <input type="radio" name="gender" id="dot-3">
+        <span class="gender-title">Gender</span>
+        <div class="category">
+          <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Rather not say</span>
+          </label>
+        </div>
+      </div>
+      <div class="button">
+        <input type="submit" value="Register">
+      </div>
+    </form>
+
+  </div>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.dropdown-toggle').dropdown();
+    });
+  </script>
 
 </body>
 
