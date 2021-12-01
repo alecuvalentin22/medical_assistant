@@ -12,6 +12,8 @@
   <script src="../../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   <link rel="stylesheet" href="../../styles.css" type="text/css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css">
+  <script src="scripts/speech.js"></script>
 </head>
 
 <body>
@@ -62,70 +64,139 @@
       </div>
     </div>
   </nav>
-
   <div class="container">
-    <div class="title">Consultation form</div>
-    <form action="#">
-      <div class="user-details">
-        <div class="input-box">
-          <span class="details"> Full name</span>
-          <input type="text" placeholder="Enter your name" required>
+    <div class="content">
+      <div class="title">Consultation</div>
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First name</span>
+            <input type="text" id="firstName" placeholder="Enter your first name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last name</span>
+            <input type="text" id="lastName" placeholder="Enter your last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="phoneNumber" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Birthday</span>
+            <input class="user-profile" type="date" id="birthday" name="trip-start" value="2021-12-01" min="1915-01-01"
+              max="2021-12-1" required>
+          </div>
         </div>
-        <div class="input-box">
-          <span class="details">Username</span>
-          <input type="text" placeholder="Enter your username" required>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one" id="male"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two" id="female"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three" id="other"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
         </div>
-        <div class="input-box">
-          <span class="details">Email</span>
-          <input type="text" placeholder="Enter your email" required>
-        </div>
-        <div class="input-box">
-          <span class="details">Phone number</span>
-          <input type="text" placeholder="Enter your phone number" required>
-        </div>
-        <div class="input-box">
-          <span class="details">Password</span>
-          <input type="text" placeholder="Enter your password" required>
-        </div>
-        <div class="input-box">
-          <span class="details">Confirm password</span>
-          <input type="text" placeholder="Confirm password" required>
-        </div>
-      </div>
-      <div class="gender-details">
-        <input type="radio" name="gender" id="dot-1">
-        <input type="radio" name="gender" id="dot-2">
-        <input type="radio" name="gender" id="dot-3">
-        <span class="gender-title">Gender</span>
-        <div class="category">
-          <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Male</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Female</span>
-          </label>
-          <label for="dot-3">
-            <span class="dot three"></span>
-            <span class="gender">Rather not say</span>
-          </label>
-        </div>
-      </div>
-      <div class="button">
-        <input type="submit" value="Register">
-      </div>
-    </form>
+        <div class="symptoms-category">
+          <br>
+          <span class="details">Choose from the list below the symptoms you feel you
+            have</span>
+          <div class="radio-button-item">
+            <input type="checkbox" id="feverID" name="fever" value="fever">
+            <label for="coughSym">Fever or chills</label><br>
+          </div>
 
+          <div class="radio-button-item">
+            <input type="checkbox" id="coughID" name="cough" value="cough">
+            <label for="feverSym">Cough</label><br>
+          </div>
+
+          <div class="radio-button-item">
+            <input type="checkbox" id="fatigueID" name="fatigue" value="fatigue">
+            <label for="headacheSym">Fatigue</label>
+          </div>
+
+          <div class="radio-button-item">
+            <input type="checkbox" id="headacheID" name="headache" value="headache">
+            <label for="backPainSym">Headache</label>
+          </div>
+
+          <div class="radio-button-item">
+            <input type="checkbox" id="tasteID" name="tastID" value="tasteID">
+            <label for="otherSym">Loss of taste or smell</label>
+          </div>
+
+          <div class="radio-button-item">
+            <input type="checkbox" id="throatID" name="throat" value="throat">
+            <label for="otherSym">Sore throat</label>
+          </div>
+
+          <div class="radio-button-item">
+            <input type="checkbox" id="nauseaID" name="nausea" value="nausea">
+            <label for="otherSym">Nausea or vomiting</label>
+          </div>
+
+          <div class="radio-button-item">
+            <input type="checkbox" id="chestID" name="chest" value="chest">
+            <label for="otherSym">Pain or pressure in the chest</label>
+          </div>
+        </div>
+        <div class="symptoms-description">
+          <br>
+          <textarea name="symptoms-description" id="symptoms-description" cols="150" rows="10"
+          placeholder="Describe here you emergency"></textarea>
+          
+          <!--<a href="#" id="speech-recognition"><i class="fas fa-microphone"></i></a>-->
+        </div>
+        <div class="symptoms-speech-recog">
+          <button class="btn btn-success btn-lg"><i id="speech-recognition" class="bi bi-mic"></i>
+            <span id="listen">Press to talk</span></button>
+        </div>
+        <br>
+
+        <div class="symptoms-category-vars">
+          <label class="label-principle" for="symptoms-category">Choose the appropriate category for your
+            condition
+          </label>
+          <select name="symptoms-category" id="symptoms-category">
+              <option value="alergies">Alergies</option>
+              <option value="infectious-diseases">Infectious diseases</option>
+              <option value="heart">Heart</option>
+              <option value="eyes">Eyes</option>
+              <option value="nervous-system">Nervous system</option>
+              <option value="dermatology">Dermatology</option>
+              <option value="corona">Covid-19</option>
+              <option value="diabetes">Diabetes</option>
+              <option value="endocrinology">Endocrinology</option>
+              <option value="orthopedics">Orthopedics</option>
+              <option value="psychology">Psychology</option>
+          </select>
+          
+      </div>
+
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
   </div>
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function () {
-      $('.dropdown-toggle').dropdown();
-    });
-  </script>
 
 </body>
 
