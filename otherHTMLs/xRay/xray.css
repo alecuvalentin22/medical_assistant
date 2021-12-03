@@ -295,8 +295,8 @@
     font-weight: 500;
     font-size: 20px;
     cursor: pointer;
-    color: #cccccc;
-    border: 4px dashed #009578;
+    color: #8d99ae;
+    border: 4px dashed #d90429;
     border-radius: 10px;
   }
   
@@ -331,12 +331,14 @@
     text-align: center;
   }
   
-  #pula {
+  #drop-img {
     padding-top: 10%;
+    padding-left: 25px;
+    max-width: 350px;
 }
 
   @media (max-width: 650px) {
-      #pula {
+      #drop-img {
           padding-top: 45%;
       }
   }
