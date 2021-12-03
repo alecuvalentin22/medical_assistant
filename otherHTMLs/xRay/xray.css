@@ -331,3 +331,12 @@
     text-align: center;
   }
   
+  #pula {
+    padding-top: 10%;
+}
+
+  @media (max-width: 650px) {
+      #pula {
+          padding-top: 45%;
+      }
+  }
