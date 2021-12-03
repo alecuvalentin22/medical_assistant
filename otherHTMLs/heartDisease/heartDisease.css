@@ -53,54 +53,11 @@ p > span {
   #heart {
     width: 150px;  
     stroke: var(--magenta);
-    fill: var(--grey);
+    fill: var(--magenta);
     stroke-dasharray: 54;
     stroke-dashoffset: 54; 
+    animation: 0.8s linear beat infinite;
   }
-  
-  #heart.like {
-    animation: 2s ease-in forwards like, 
-    0.8s linear 2s 2 forwards beat;
-  }
-  
-  #heart.unlike {
-    animation: 2s ease-out forwards unlike; 
-  }
-  
-  @keyframes like {
-    0% {
-      stroke-dashoffset: 54;
-      fill: var(--grey);
-    }
-  
-    70% {
-      stroke-dashoffset: 0;
-      fill: var(--grey);
-    }
-  
-    100% {
-      stroke-dashoffset: 0;
-      fill: var(--magenta);
-    }
-  }
-  
-  @keyframes unlike {
-    0% {
-      stroke-dashoffset: 0;
-      fill: var(--magenta); 
-    }
-    
-    30% {
-      stroke-dashoffset: 0;
-      fill: var(--grey);
-    }
-    
-    100% {
-      stroke-dashoffset: 54;
-      fill: var(--grey);
-    }
-  }
-  
   
   @keyframes beat {
     0% {
