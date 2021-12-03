@@ -25,6 +25,17 @@
     transition: 1s; 
     transform: translateY(-53.5%);
 }
+@media(max-width: 800px){
+  #canvas-content {
+    float:center;
+    max-width: 50%;
+    padding-top: 400px;
+ }
+ #container {
+  align-items:center; 
+  bottom: -30%;
+ }
+}
 
 #canvas-content:hover {
     opacity: 1;
@@ -35,7 +46,7 @@
 
 :root {
   --grey: #CCC;
-  --magenta: #F06; 
+  --magenta: #d90429; 
 }
 
 p > span {
@@ -43,11 +54,9 @@ p > span {
   }
   
   #container {
-    height: 100vh; 
+    height: 80vh;
     display: flex; 
-    justify-content: left; 
-    align-items: left; 
-    padding-top: 5px;
+    margin-left: 47%;
   }
   
   #heart {
@@ -72,4 +81,9 @@ p > span {
       transform: scale(1, 1);
     }
   
+  }
+
+  #inima {
+    position:absolute;                 
+    bottom:0;  
   }

@@ -8,9 +8,9 @@
 }
 .section{
 	width: 100%;
-	min-height: 100vh;
 	background-color: #5d5d5d;
-    height: 140%;
+	height:120%;
+	display: flex;
 }
 .container{
 	width: 100%;
@@ -22,7 +22,6 @@
 	float: left;
 	width: 100%;
     padding-top: 30px;
-    height: auto;
 }
 .image-section{
 	float: right;
