@@ -27,7 +27,7 @@
 }
 @media(max-width: 800px){
   #canvas-content {
-    float:center;
+    float:right;
     max-width: 50%;
     padding-top: 400px;
  }

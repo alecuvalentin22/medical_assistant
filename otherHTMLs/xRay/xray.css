@@ -1,0 +1,279 @@
+.header-intro {
+    background-color: rgba(255, 255, 255, 0.472);
+    z-index: 1;
+}
+
+.header-section {
+    background-color: #ef233c;
+    clip-path: polygon(50% 0, 100% 0%, 100% 100%, 29% 100%);
+    height: 500px;
+    z-index: 1;
+}
+
+.heading-primary {
+    position: absolute;
+    top: 20%;
+    left: 3%;
+    color: #ef233c;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.heading-secondary {
+    position: absolute;
+    top: 27%;
+    left: 3%;
+    color: #222222d0;
+    text-transform: uppercase;
+}
+
+.primary-heading {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+}
+
+.scanImageSection {
+    display: flex;
+    flex-direction: column;
+    background-color:#ef233c ;
+}
+
+.image-upload {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    background-color: #22222298;
+    height: 300px;
+    width: 30%;
+    padding-left: 30px;
+    padding-top: 30px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.uploaded-image {
+    width: 90px;
+    height: 90px;
+}
+.delete-images {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+    text-align: center;
+    color: #fff;
+    background-color: #222222e3;
+    width: 10%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.delete-images i {
+    font-size: 14px;
+}
+.row-flex-layout {
+    display: flex;
+    flex-direction: row;
+}
+.x-ray-steps-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.steps-xray {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#radiographyCanvas {
+    margin-left: 90px;
+}
+
+.step-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    background-color: #000000bb;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    position: relative;
+    transition: all .3s ease-in-out;
+    outline: none;
+}
+
+.step-btn:hover i,
+.step-btn:hover {
+    color: #d90429;
+}
+
+.step-btn:hover {
+    transform: translate(30px);
+}
+
+.step-btn i {
+    font-size: 16px;
+    margin-right: 5px;
+    color: #fff;
+}
+
+/* Live webcam xray */
+.webcam-live-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 700px;
+    background-color: #222222d0;
+    z-index: 1;
+}
+
+.live-cam-xray {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-video, .container-web {
+    border: 5px solid #d90429;
+    padding: 20px;
+    margin: 40px;
+    z-index: 1000;
+    width: 400 !important;
+}
+
+.start-live-xray {
+    width: 14%;
+    margin-top: 50px;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d90429;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all .2s ease-out;
+    cursor: pointer;
+}
+
+.start-live-xray:hover {
+    background-color: #fff;
+    color: #d90429;
+    transform: translateY(-10px);
+}
+
+/* Media queries */
+
+@media all and (max-width: 1420px) {
+
+    .heading-primary {
+        font-size: 22px;
+    }
+
+    .heading-secondary {
+        font-size: 18px;
+        top: 23%;
+    }
+
+    #radiographyCanvas {
+        width: 400px;
+    }
+
+    .row-flex-layout {
+        justify-content: center;
+    }
+
+    .steps-xray {
+        width: 50%;
+    }
+
+    .delete-images {
+        width: 20%;
+    }
+
+}
+
+@media all and (max-width: 890px) {
+    .header-section {
+        background-color: #fff;
+        clip-path: none;
+        display: none;
+    }
+
+    .heading-primary, .heading-secondary {
+        position: relative;
+    }
+
+    .header-intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 250px;
+    }
+
+    .row-flex-layout {
+        align-items: center;
+    }
+
+    #radiographyCanvas {
+        height: 300px;
+        margin-left: 20px;
+    }
+
+    .image-upload {
+        margin-top: 25px;
+    }
+
+    .start-live-xray {
+        width: 35%;
+    }
+
+    .live-cam-xray {
+        flex-direction: column;
+    }
+   
+}
+
+@media all and (max-width: 650px) {
+    .row-flex-layout {
+        flex-direction: column;
+    }
+
+    .image-upload {
+        width: 80%;
+    }
+
+    .x-ray-steps-container {
+        justify-content: space-around;
+    }
+
+    .primary-heading {
+        font-size: 12px;
+    }
+
+    .container-web, .container-video {
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    #radiographyCanvas {
+        width:90%;
+    }
+
+    .start-live-xray {
+        width: 50%;
+    }
+}
