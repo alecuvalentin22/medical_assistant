@@ -45,45 +45,50 @@
 
 @media screen and (max-width: 768px){
 	.container{
-	width: 100%;
-	display: block;
-	margin:auto;
-	padding-top:50px;
-    background-color: #5d5d5d;
-}
-.content-section{
-	float:none;
-	width:100%;
-	display: block;
-	margin:auto;
-    padding-top:150px;
-    background-color: #5d5d5d;
-}
-.image-section{
-	float:none;
-	width:100%;
-    padding-top: 15px;
-	
-}
-.image-section img{
-	width: 100%;
-	height: auto;
-	display: block;
-	margin:auto;
-}
-.content-section .title{
-	text-align: center;
-	font-size: 19px;
-    padding-top:15px;
-}
-#gmaps {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-  section{
-      height:fit-content;
-      background-color: #5d5d5d;
-  }
+		width: 100%;
+		display: block;
+		margin:auto;
+		padding-top:50px;
+		background-color: #5d5d5d;
+	}
+	.content-section{
+		float:none;
+		width:100%;
+		display: block;
+		margin:auto;
+		padding-top:150px;
+		background-color: #5d5d5d;
+	}
+	.image-section{
+		float:none;
+		width:100%;
+		padding-top: 15px;
+		
+	}
+	.image-section img{
+		width: 100%;
+		height: auto;
+		display: block;
+		margin:auto;
+	}
+	.content-section .title{
+		text-align: center;
+		font-size: 19px;
+		padding-top:15px;
+	}
+	#gmaps {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		margin-left: 5.5%;
+	}
+	#geolocation {
+		margin-top: 5%;
+		text-align: center;
+	}
+  	section{
+      	height:fit-content;
+      	background-color: #5d5d5d;
+  	}
 }
 .text-content {
     padding-top: 10px;
