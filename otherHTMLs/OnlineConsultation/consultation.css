@@ -160,6 +160,9 @@ ul {
     .container .content .category{
       flex-direction: column;
     }
+    #symptoms-description {
+      max-width:300px;
+    }
   }
 
   .content {
