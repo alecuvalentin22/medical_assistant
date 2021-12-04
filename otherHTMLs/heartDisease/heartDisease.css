@@ -25,20 +25,36 @@
     transition: 1s; 
     transform: translateY(-53.5%);
 }
-@media(max-width: 800px){
+@media(max-width: 778px){
   #canvas-content {
-    float:right;
-    max-width: 50%;
+    max-width: 60%;
     padding-top: 400px;
+    padding-left:100px;
  }
- #container {
-  align-items:center; 
+ #container-inima{
   bottom: -30%;
+  margin-left:40%;
  }
+
 }
 
-#canvas-content:hover {
-    opacity: 1;
+@media (max-width: 650px){
+  #canvas{
+    width:300px;
+    height: 200px;
+  }
+  #container-inima{
+    margin-left:30%;
+  }
+  #inima{
+    display: flex;
+    
+  }
+  #canvas-content{
+    padding-left: 10px;
+    padding-top: 230px;
+  }
+
 }
 
 /* heart stuff */
@@ -86,4 +102,14 @@ p > span {
   #inima {
     position:absolute;                 
     bottom:0;  
+  }
+  .contentul {
+    padding-top: 170px;
+  }
+
+  #container-inima{
+    margin-left:50%;
+  }
+  #canvas{
+    padding-left:40px;
   }
