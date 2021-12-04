@@ -7,7 +7,7 @@ function init(){
     let brand = document.querySelector('.navbar-brand');
 
     brand.addEventListener('click', (e) => {
-        playSoundEffect(e, e.target.baseURI, soundEffect)
+        playSoundEffect(e, "../../index.html", soundEffect)
     });
 
     for (let i = 0; i < navLinks.length; i++) {

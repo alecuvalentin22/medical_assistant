@@ -186,6 +186,32 @@
             <option value="psychology">Psychology</option>
           </select>
         </div>
+        <div id="geolocation" style="margin-top: 1%;">
+          <input type="checkbox" class="dot one" id="show" onclick="getLocation()"> Press here if you agree to share your location</span>
+          <p id="position"></p>
+        </div>
+        
+        <script>
+          var x = document.getElementById("position");
+
+          function getLocation() {
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition(showPosition);
+            } else { 
+              x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+          }
+
+          function showPosition(position) {
+            if (x.innerHTML === "") {
+              x.innerHTML = "Latitude: " + position.coords.latitude + 
+              "<br>Longitude: " + position.coords.longitude;
+            }
+            else {
+              x.innerHTML = "";
+            }
+          }
+        </script>
         <div class="button">
           <input type="submit" value="Register">
         </div>

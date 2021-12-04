@@ -82,33 +82,8 @@
           <img src="../../resources/vali.jpg">
         </div>
 
-        <div id="geolocation">
-          <button id="show" class="btn" onclick="getLocation()">Our location (press for details)</button>
-          <p id="position"></p>
-          <iframe src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=en&amp;q=Bulevardul%20Dinicu%20Golescu%2029&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="300" height="250" style="border:0; display: block;" allowfullscreen="" loading="lazy" id="gmaps"></iframe>
-        </div>
+        <iframe src="https://maps.google.com/maps?width=100%25&amp;height=250&amp;hl=en&amp;q=Bulevardul%20Dinicu%20Golescu%2029&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" width="300" height="250" style="border:0; display: block;" allowfullscreen="" loading="lazy" id="gmaps"></iframe>
 
-        <script>
-          var x = document.getElementById("position");
-
-          function getLocation() {
-            if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(showPosition);
-            } else { 
-              x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-          }
-
-          function showPosition(position) {
-            if (x.innerHTML === "") {
-              x.innerHTML = "Latitude: " + position.coords.latitude + 
-              "<br>Longitude: " + position.coords.longitude;
-            }
-            else {
-              x.innerHTML = "";
-            }
-          }
-        </script>
       </div>
     </div>
   </div>

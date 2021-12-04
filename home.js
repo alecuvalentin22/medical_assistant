@@ -7,8 +7,9 @@ function init(){
     let navLinks = document.querySelectorAll('.nav-link');
     let brand = document.querySelector('.navbar-brand');
 
+    console.log(brand);
     brand.addEventListener('click', (e) => {
-        playSoundEffect(e, e.target.baseURI, soundEffect)
+        playSoundEffect(e, "./index.html", soundEffect)
     });
 
     for (let i = 0; i < navLinks.length; i++) {
@@ -39,5 +40,3 @@ function init(){
 function topFunction() {
     document.documentElement.scrollTop = 0;
 }
-
-
