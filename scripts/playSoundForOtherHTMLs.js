@@ -1,8 +1,7 @@
 window.onload = init;
 
 function init(){
-    mybutton = document.getElementById("myBtn");
-    let soundEffect = new Audio('./resources/soundEffects/navbar.mp3');
+    let soundEffect = new Audio('../../resources/soundEffects/navbar.mp3');
 
     let navLinks = document.querySelectorAll('.nav-link');
     let brand = document.querySelector('.navbar-brand');
@@ -22,22 +21,6 @@ function init(){
         soundEffect.play();
         setTimeout(() => {
             window.location.href = url;
-        }, 300);
-    }
-    
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = "block";
-        } else {
-        mybutton.style.display = "none";
-        }
+        }, 200);
     }
 }
-
-function topFunction() {
-    document.documentElement.scrollTop = 0;
-}
-
-
