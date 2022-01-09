@@ -84,10 +84,8 @@ function drawImage(img) {
         let y
         imgHeight = radiographyCanvas.height /img.length - 20;
         imgWidth = el.width * (imgHeight / el.height);
-        // center
-        x = (radiographyCanvas.width - imgWidth) / 2
-        // margin
-        y = 10 
+        x = (radiographyCanvas.width - imgWidth) / 2;
+        y = 10;
         context.drawImage(el, x, y, imgWidth, imgHeight);
     })
 

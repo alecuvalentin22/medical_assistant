@@ -12,7 +12,6 @@ window.addEventListener('load', () => {
     canvas.height = 375;
     canvas.width = 630;
 
-    //INIMIOARA
     const heart = document.getElementById('heart'); 
     const para = document.getElementById('text');
     const likeUnlikePost = function() {
@@ -28,7 +27,6 @@ window.addEventListener('load', () => {
     }
   
     heart.addEventListener('click', likeUnlikePost); 
-    // INIMIOARA END
 
     initChart(context, yLabels);
 

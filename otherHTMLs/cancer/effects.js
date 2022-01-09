@@ -3,26 +3,21 @@ function init() {
     can = document.getElementById('MyCanvasArea'),
     ctx = can.getContext('2d');
     x = 10; y = 10;
+    ctx.filter = 'none';
     imageObj = new Image();
     imageObj.src = 'smoking_colon.jpg';
     imageObj.onload = function () {
-        ctx.drawImage(imageObj, x, y, 200, 200);
-        drawInvertedImage();
-        drawGrayscaleImage();
-        drawRedImage();
-        drawSepiaImage();
-        drawNoisedImage();  
-}
-  
+        ctx.drawImage(imageObj, x, y, 200, 200); 
+    } 
 }
 
 function drawInvertedImage() {
-    imageData = ctx.getImageData(x, y, can.width, can.height);
+    imageData = ctx.getImageData(x, y, 200, 200);
     imgPixels = imageData.data;
     for ( i = 0; i < imgPixels.length; i += 4) {
-        imgPixels[i] = 255 - imgPixels[i]; // red
-        imgPixels[i + 1] = 255 - imgPixels[i + 1];// green
-        imgPixels[i + 2] = 255 - imgPixels[i + 2];// blue
+        imgPixels[i] = 255 - imgPixels[i];
+        imgPixels[i + 1] = 255 - imgPixels[i + 1];
+        imgPixels[i + 2] = 255 - imgPixels[i + 2];
     }
     ctx.putImageData(imageData, 220, 10);
 }
@@ -73,4 +68,36 @@ function drawNoisedImage() {
         imgPixels[i + 2] = imgPixels[i + 2] * random3 - 10;
     }
     ctx.putImageData(imageData, 430, 220);
+}
+
+function clearCanvas() {
+    can = document.getElementById('MyCanvasArea');
+    ctx = can.getContext("2d");
+    ctx.clearRect(0, 0, can.width, can.height);
+    init();
+}
+
+function blurCanvas() {
+    var data = ctx.getImageData(0, 0, 220, 220);
+    var px = data.data;
+    var tmpPx = new Uint8ClampedArray(px.length);
+    tmpPx.set(px);
+
+    for (var i = 0, len= px.length; i < len; i++) {
+        if (i % 8 === 7) {continue;}
+
+        px[i] = ( tmpPx[i] 
+            + (tmpPx[i - 8] || tmpPx[i])
+            + (tmpPx[i + 8] || tmpPx[i]) 
+            + (tmpPx[i - 8 * data.width] || tmpPx[i])
+            + (tmpPx[i + 8 * data.width] || tmpPx[i]) 
+            + (tmpPx[i - 8 * data.width - 8] || tmpPx[i])
+            + (tmpPx[i + 8 * data.width + 8] || tmpPx[i])
+            + (tmpPx[i + 8 * data.width - 8] || tmpPx[i])
+            + (tmpPx[i - 8 * data.width + 8] || tmpPx[i])
+            )/9;
+    };
+
+    ctx.putImageData(data,0,0);
+    delete tmpPx;
 }
