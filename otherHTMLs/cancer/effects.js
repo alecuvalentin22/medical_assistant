@@ -1,5 +1,5 @@
 
-function init() {
+async function init() {
     can = document.getElementById('MyCanvasArea'),
     ctx = can.getContext('2d');
     x = 10; y = 10;
@@ -9,6 +9,23 @@ function init() {
     imageObj.onload = function () {
         ctx.drawImage(imageObj, x, y, 200, 200); 
     } 
+
+    audio = await new Audio('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
+    audio.playbackRate = 0.5;
+    audio.volume = 0.03; 
+    audio.play();
+}
+
+function speedUpSong() {
+    audio.playbackRate += 0.5;
+}
+
+function increaseVolume() {
+    audio.volume += 0.1;
+}
+
+function stopSong() {
+    audio.pause();
 }
 
 function drawInvertedImage() {
