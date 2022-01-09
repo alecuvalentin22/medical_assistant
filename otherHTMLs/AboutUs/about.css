@@ -96,3 +96,33 @@
 #gmaps{
     padding-top: 20px;
 }
+
+#bogdan, #vali {
+	position: absolute;
+	left: 75%;
+}
+
+#bogdan {
+	top: 50%;
+}
+
+#vali {
+	top: 100%;
+}
+
+.image-section div{
+	color: white;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: visibility 0s, opacity 0.5s linear; 
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.image-section:hover{
+	cursor: pointer;
+}
+
+.image-section:hover div{
+	visibility: visible;
+	opacity: 1; 
+}
